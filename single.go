@@ -1,3 +1,4 @@
+// coded by s1ege greetz to all GSH members..
 package main
 
 import (
