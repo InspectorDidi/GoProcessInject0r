@@ -116,7 +116,7 @@ func main() {
     go clear_pids()
 
     // recursively iterate over proc_list's pids and filter out valid targets-
-    //  sleeps are to limit cpu usage
+    // sleeps are to limit cpu usage
     for {
         time.Sleep(1 * time.Second)
         for _,val := range proc_list {
