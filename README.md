@@ -1,5 +1,5 @@
 # ProcessInjector
-Proof of concept for single/multiple shellcode process injection malware written in Go language.
+Proof of concept for single/multiple shellcode process injection malware in Go language.
 
 Contains two programs:
 
