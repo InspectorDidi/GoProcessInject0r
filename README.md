@@ -13,7 +13,7 @@ To build:
 ```
 admin@local:~$ go get "github.com/TheTitanrain/w32"
 admin@local:~$ set GOARCH=386
-admin@local:~$ go build set -ldflags "-H windowsgui" <single/multi>.go
+admin@local:~$ go build -ldflags "-H windowsgui" <single/multi>.go
 ```
 
 Fully Undetectable 03-02-2020
